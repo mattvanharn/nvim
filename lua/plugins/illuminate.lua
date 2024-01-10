@@ -10,7 +10,7 @@ return {
       providers = { "lsp" },
     },
   },
-  config = function(_, opts)
+  config = function()
     require("illuminate").configure(opts)
 
     local function map(key, dir, buffer)
@@ -30,9 +30,9 @@ return {
         map("[[", "prev", buffer)
       end,
     })
-  end,
-  keys = {
-    { "]]", desc = "Next Reference" },
-    { "[[", desc = "Prev Reference" },
-  },
+    keys = {
+      { "]]", desc = "Next Reference" },
+      { "[[", desc = "Prev Reference" },
+    }
+  end
 }
