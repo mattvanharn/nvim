@@ -1,4 +1,4 @@
--- A File Explorer For Neovim Written In Lua
+-- lua/plugins/tree.lua
 
 return {
   "nvim-tree/nvim-tree.lua",

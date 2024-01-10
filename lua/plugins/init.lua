@@ -1,4 +1,5 @@
 -- lua/plugins/init.lua
+
 return { 
   { 
     "folke/neoconf.nvim", 

@@ -1,4 +1,4 @@
--- lua/config/ts-autotag.lua
+-- lua/plugins/ts-autotag.lua
 
 return {
   "windwp/nvim-ts-autotag",
