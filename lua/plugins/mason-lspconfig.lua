@@ -1,15 +1,25 @@
 -- lua/plugins/mason-lspconfig.lua
 
+local opts = {
+	ensure_installed = {
+		"efm",
+		"bashls",
+		"tsserver",
+		"solidity",
+		"tailwindcss",
+		"pyright",
+		"lua_ls",
+		"emmet_ls",
+		"jsonls",
+		"clangd",
+	},
+
+	automatic_installation = true,
+}
+
 return {
-  "williamboman/mason-lspconfig.nvim",
-  opts = {
-    ensure_installed = {
-      "efm",
-      "lua_ls",
-      "pyright"
-    },
-  automatic_installation = true,
-  },
-  event = "BufReadPre",
-  dependencies = "williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	opts = opts,
+	event = "BufReadPre",
+	dependencies = "williamboman/mason.nvim",
 }

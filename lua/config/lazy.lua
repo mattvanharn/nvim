@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("config.globals")
 require("config.keymaps")
 require("config.options")
+require("config.autocmds")
 
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
@@ -190,5 +191,6 @@ local opts = {
     require = false,
   },
 }
+
 
 require("lazy").setup("plugins", opts)

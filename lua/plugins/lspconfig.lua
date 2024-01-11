@@ -129,10 +129,10 @@ local config = function()
 	local fixjson = require("efmls-configs.formatters.fixjson")
 	local shellcheck = require("efmls-configs.linters.shellcheck")
 	local shfmt = require("efmls-configs.formatters.shfmt")
-	local hadolint = require("efmls-configs.linters.hadolint")
-	local solhint = require("efmls-configs.linters.solhint")
 	local cpplint = require("efmls-configs.linters.cpplint")
 	local clangformat = require("efmls-configs.formatters.clang_format")
+	-- local hadolint = require("efmls-configs.linters.hadolint")
+	-- local solhint = require("efmls-configs.linters.solhint")
 
 	-- configure efm server
 	lspconfig.efm.setup({
