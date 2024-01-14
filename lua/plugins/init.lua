@@ -10,4 +10,11 @@ return {
     "folke/neodev.nvim",
     lazy = false,
   },
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving
+    opts = {
+      -- options
+    }
+  }
 }
