@@ -1,3 +1,5 @@
+-- lua/plugins/dashboard.lua
+
 local logos = {}
 
 logos.default1 = {

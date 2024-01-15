@@ -42,6 +42,7 @@ Detailed descriptions of each file and directory in the Neovim configuration.
 - `autopairs.lua`: Manages the insertion of matching pairs (brackets, quotes) automatically during typing.
 - `bufferline.lua`: Implements an enhanced buffer line for improved file navigation and management.
 - `catppuccin.lua`: Activates the Catppuccin color scheme for a visually appealing coding environment.
+- `copilot.lua`: GitHub Copilot plugin with CMP and Lualine integration
 - `cmp.lua`: Sets up the `nvim-cmp` plugin for intelligent and context-aware autocompletion.
 - `comment.lua`: Enables efficient toggling of comments in code with keyboard shortcuts.
 - `dashboard.lua`: Creates a custom Neovim dashboard for quick access to files and commands upon startup.

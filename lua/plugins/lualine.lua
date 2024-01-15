@@ -2,7 +2,9 @@
 
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
 	lazy = false,
 
 	config = function()
@@ -28,7 +30,33 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { "filename" },
+				lualine_c = {
+					{
+						"copilot",
+						-- Default values
+						symbols = {
+							status = {
+								icons = {
+									enabled = "",
+									disabled = "",
+									warning = "",
+									unknown = "",
+								},
+								hl = {
+									enabled = "#50FA7B",
+									disabled = "#6272A4",
+									warning = "#FFB86C",
+									unknown = "#FF5555",
+								},
+							},
+							spinners = require("copilot-lualine.spinners").dots,
+							spinner_color = "#6272A4",
+						},
+						show_colors = false,
+						show_loading = true,
+					},
+					"filename",
+				},
 				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
