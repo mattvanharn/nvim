@@ -1,17 +1,19 @@
--- lua/plugins/mason-lspconfig.lua
-
+-- lua/plugins/lsp/mason-lspconfig.lua
 local opts = {
 	ensure_installed = {
 		"efm",
 		"bashls",
 		"tsserver",
-		"solidity",
 		"tailwindcss",
 		"pyright",
 		"lua_ls",
 		"emmet_ls",
 		"jsonls",
 		"clangd",
+		"als",
+		"clojure_lsp",
+		"jdtls",
+		"solargraph",
 	},
 
 	automatic_installation = true,

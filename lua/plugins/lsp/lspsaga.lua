@@ -1,4 +1,4 @@
--- lua/plugins/lspsaga.lua
+-- lua/plugins/lsp/lspsaga.lua
 
 return {
 	"glepnir/lspsaga.nvim",

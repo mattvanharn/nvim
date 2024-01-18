@@ -1,4 +1,4 @@
--- lua/plugins/lspconfig.lua
+-- lua/plugins/lsp/lspconfig.lua
 
 local on_attach = require("util.lsp").on_attach
 local diagnostic_signs = require("util.icons").diagnostic_signs
@@ -79,13 +79,6 @@ local config = function()
 		filetypes = { "sh", "aliasrc" },
 	})
 
-	-- solidity
-	lspconfig.solidity.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		filetypes = { "solidity" },
-	})
-
 	-- typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
 	lspconfig.emmet_ls.setup({
 		capabilities = capabilities,
@@ -120,6 +113,43 @@ local config = function()
 		},
 	})
 
+	-- Ada
+	lspconfig.als.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+
+	-- Clojure
+	lspconfig.clojure_lsp.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+
+	-- Java
+	lspconfig.jdtls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+
+	-- Add jdtls configuration here
+	local jdtls_config = {
+		servers = {
+			jdtls = {},
+		},
+		setup = {
+			jdtls = function()
+				return true -- avoid duplicate servers
+			end,
+		},
+	}
+
+	lspconfig.jdtls.setup(jdtls_config)
+	-- Ruby
+	lspconfig.solargraph.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local flake8 = require("efmls-configs.linters.flake8")
@@ -131,8 +161,9 @@ local config = function()
 	local shfmt = require("efmls-configs.formatters.shfmt")
 	local cpplint = require("efmls-configs.linters.cpplint")
 	local clangformat = require("efmls-configs.formatters.clang_format")
-	-- local hadolint = require("efmls-configs.linters.hadolint")
-	-- local solhint = require("efmls-configs.linters.solhint")
+	local rubocop = require("efmls-configs.linters.rubocop")
+	local hadolint = require("efmls-configs.linters.hadolint")
+	local google_java_format = require("efmls-configs.formatters.google_java_format")
 
 	-- configure efm server
 	lspconfig.efm.setup({
@@ -150,11 +181,14 @@ local config = function()
 			"vue",
 			"markdown",
 			"docker",
-			"solidity",
 			"html",
 			"css",
 			"c",
 			"cpp",
+			"java",
+			"ruby",
+			"clojure",
+			"ada",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -172,6 +206,7 @@ local config = function()
 				json = { eslint, fixjson },
 				jsonc = { eslint, fixjson },
 				sh = { shellcheck, shfmt },
+				java = { google_java_format },
 				javascript = { eslint, prettier_d },
 				javascriptreact = { eslint, prettier_d },
 				typescriptreact = { eslint, prettier_d },
@@ -179,11 +214,23 @@ local config = function()
 				vue = { eslint, prettier_d },
 				markdown = { prettier_d },
 				docker = { hadolint, prettier_d },
-				solidity = { solhint },
 				html = { prettier_d },
 				css = { prettier_d },
 				c = { clangformat, cpplint },
 				cpp = { clangformat, cpplint },
+				ruby = {
+					-- rubocop = {
+					--   lintCommand = "rubocop --format emacs --out /dev/stdout --stdin ${}",
+					--   lintStdin = true,
+					--   lintFormats = {"%f:%l:%c: %m"},
+					--   lintIgnoreExitCode = true,
+					--   formatCommand = "rubocop --auto-correct --stdin ${INPUT}",
+					--   formatStdin = true
+					-- },
+					rubocop,
+				},
+				clojure = {},
+				ada = {},
 			},
 		},
 	})
