@@ -4,6 +4,9 @@ return {
 	"glepnir/lspsaga.nvim",
 	lazy = false,
 	config = function()
+		-- Ensure leaf.nvim is set up before LSPSaga
+		require("leaf").setup()
+		vim.cmd("colorscheme leaf")
 		require("lspsaga").setup({
 			-- keybinds for navigation in lspsaga window
 			move_in_saga = { prev = "<C-k>", next = "<C-j>" },
@@ -16,7 +19,7 @@ return {
 				edit = "<CR>",
 			},
 			ui = {
-				kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+				-- Adjust UI to use colors
 			},
 		})
 	end,

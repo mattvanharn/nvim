@@ -4,7 +4,7 @@ return {
 	"akinsho/bufferline.nvim",
 	lazy = false,
 	requires = {
-		"catppuccin",
+		"leaf",
 	},
 	keys = {
 		{ "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
@@ -51,8 +51,8 @@ return {
 				end)
 			end,
 		})
-    require("bufferline").setup({
+		require("bufferline").setup({
 			highlights = require("catppuccin.groups.integrations.bufferline").get(),
-    })
+		})
 	end,
 }
