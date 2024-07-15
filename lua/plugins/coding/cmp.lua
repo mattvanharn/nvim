@@ -5,7 +5,6 @@ return {
 	version = false, -- last release is way too old
 	event = "InsertEnter",
 	dependencies = {
-		"zbirenbaum/copilot-cmp",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
@@ -74,7 +73,6 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
-				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
@@ -101,8 +99,6 @@ return {
 			sorting = {
 				priority_weight = 2,
 				comparators = {
-					require("copilot_cmp.comparators").prioritize,
-
 					-- Below is the default comparitor list and order for nvim-cmp
 					cmp.config.compare.offset,
 					-- cmp.config.compare.scopes, --this is commented in nvim-cmp too

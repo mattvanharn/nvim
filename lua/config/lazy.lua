@@ -16,6 +16,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- VSCode-specific configuration
+if vim.g.vscode then
+	-- nothing
+end
+
 require("config.globals")
 require("config.keymaps")
 require("config.options")

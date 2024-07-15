@@ -56,7 +56,7 @@ mapkey("<leader>hn", "lua require('harpoon.ui').nav_next()", "n") -- Go to next 
 mapkey("<leader>hp", "lua require('harpoon.ui').nav_prev()", "n") -- Go to previous Harpoon mark
 mapkey("<leader>hm", "lua require('harpoon.ui').toggle_quick_menu()", "n") -- Show Harpoon marks
 
-mapkey("<C-h>", "lua require('harpoon.ui').nav_file(1)", "n") -- Navigate to file 1
-mapkey("<C-j>", "lua require('harpoon.ui').nav_file(2)", "n") -- Navigate to file 2
-mapkey("<C-k>", "lua require('harpoon.ui').nav_file(3)", "n") -- Navigate to file 3
-mapkey("<C-l>", "lua require('harpoon.ui').nav_file(4)", "n") -- Navigate to file 4
+mapkey("<leader>hh", "lua require('harpoon.ui').nav_file(1)", "n") -- Navigate to file 1
+mapkey("<leader>hj", "lua require('harpoon.ui').nav_file(2)", "n") -- Navigate to file 2
+mapkey("<leader>hk", "lua require('harpoon.ui').nav_file(3)", "n") -- Navigate to file 3
+mapkey("<leader>hl", "lua require('harpoon.ui').nav_file(4)", "n") -- Navigate to file 4
