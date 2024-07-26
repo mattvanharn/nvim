@@ -1,7 +1,5 @@
 # My Neovim Configuration
 
-
-
 This repository contains my personal Neovim configuration. It includes a variety of plugins and settings that enhance my productivity and coding experience.
 
 ## Installation

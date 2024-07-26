@@ -12,15 +12,15 @@ mapkey("<leader>`", "e #", "n") -- Switch to Other Buffer
 mapkey("<leader>m", "NvimTreeFocus", "n")
 mapkey("<leader>f", "NvimTreeToggle", "n")
 
--- Pane and Window Navigation
-mapkey("<C-h>", "<C-w>h", "n") -- Navigate Left
-mapkey("<C-j>", "<C-w>j", "n") -- Navigate Down
-mapkey("<C-k>", "<C-w>k", "n") -- Navigate Up
-mapkey("<C-l>", "<C-w>l", "n") -- Navigate Right
-mapkey("<C-h>", "TmuxNavigateLeft", "n") -- Navigate Left
-mapkey("<C-j>", "TmuxNaivageDown", "n") -- Navigate Down
-mapkey("<C-k>", "TmuxNaivageUp", "n") -- Navigate Up
-mapkey("<C-l>", "TmuxNaivageRight", "n") -- Navigate Right
+-- -- Pane and Window Navigation
+-- mapkey("<C-h>", "<C-w>h", "n") -- Navigate Left
+-- mapkey("<C-j>", "<C-w>j", "n") -- Navigate Down
+-- mapkey("<C-k>", "<C-w>k", "n") -- Navigate Up
+-- mapkey("<C-l>", "<C-w>l", "n") -- Navigate Right
+-- mapkey("<C-h>", "TmuxNavigateLeft", "n") -- Navigate Left
+-- mapkey("<C-j>", "TmuxNaivageDown", "n") -- Navigate Down
+-- mapkey("<C-k>", "TmuxNaivageUp", "n") -- Navigate Up
+-- mapkey("<C-l>", "TmuxNaivageRight", "n") -- Navigate Right
 
 -- Window Management
 mapkey("<leader>sv", "vsplit", "n") -- Split Vertically
@@ -60,3 +60,7 @@ mapkey("<leader>hh", "lua require('harpoon.ui').nav_file(1)", "n") -- Navigate t
 mapkey("<leader>hj", "lua require('harpoon.ui').nav_file(2)", "n") -- Navigate to file 2
 mapkey("<leader>hk", "lua require('harpoon.ui').nav_file(3)", "n") -- Navigate to file 3
 mapkey("<leader>hl", "lua require('harpoon.ui').nav_file(4)", "n") -- Navigate to file 4
+
+-- CMP Keybindings
+mapkey("<C-u>", "lua require('cmp').select_next_item({ behavior = cmp.SelectBehavior.Insert })", "i") -- Select next item
+mapkey("<C-i>", "lua require('cmp').select_prev_item({ behavior = cmp.SelectBehavior.Insert })", "i") -- Select previous item

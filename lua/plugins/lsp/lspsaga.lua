@@ -4,9 +4,6 @@ return {
 	"glepnir/lspsaga.nvim",
 	lazy = false,
 	config = function()
-		-- Ensure leaf.nvim is set up before LSPSaga
-		require("leaf").setup()
-		vim.cmd("colorscheme leaf")
 		require("lspsaga").setup({
 			-- keybinds for navigation in lspsaga window
 			move_in_saga = { prev = "<C-k>", next = "<C-j>" },
@@ -19,8 +16,12 @@ return {
 				edit = "<CR>",
 			},
 			ui = {
-				-- Adjust UI to use colors
+				-- Adjust UI to use Gruvbox colors
 			},
 		})
 	end,
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		"nvim-tree/nvim-web-devicons",
+	},
 }
