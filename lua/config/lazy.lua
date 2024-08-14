@@ -16,11 +16,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- VSCode-specific configuration
-if vim.g.vscode then
-	-- nothing
-end
-
 require("config.globals")
 require("config.keymaps")
 require("config.options")
@@ -200,11 +195,7 @@ local opts = {
 }
 
 require("lazy").setup({
-	{ import = "plugins.coding" },
-	{ import = "plugins.editor" },
-	{ import = "plugins.lsp" },
-	{ import = "plugins.treesitter" },
-	{ import = "plugins.ui" },
-	{ import = "plugins.util" },
-	{ import = "plugins.git" },
-}, opts)
+	{ import = "plugins.notvscode", cond = (function() return not vim.g.vscode end) },
+	{ import = "plugins.always",    cond = true },
+	{ import = "plugins.vscode",    cond = (function() return vim.g.vscode end) },
+})
