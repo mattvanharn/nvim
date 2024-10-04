@@ -3,7 +3,7 @@
 return {
 	"williamboman/mason.nvim",
 	event = "BufReadPre",
-	config = {
+	opts = {
 		ui = {
 			icons = {
 				package_installed = "✓",
